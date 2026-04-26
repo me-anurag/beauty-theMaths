@@ -1,0 +1,2380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="BeautyMaths"/>
+  <meta name="theme-color" content="#080c10"/>
+  <meta name="description" content="Master multiplication tables 2–100 with lightning-speed practice sessions."/>
+  <title>Beauty &amp; The Maths</title>
+
+  <!-- PWA Manifest (inline) -->
+  <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22Beauty+%26+The+Maths%22%2C%22short_name%22%3A%22BeautyMaths%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23080c10%22%2C%22theme_color%22%3A%22%23080c10%22%7D"/>
+
+  <!-- Apple icons -->
+  <link rel="apple-touch-icon" href="data:image/png;base64,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"/>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/png;base64,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"/>
+
+  <style>
+/* =============================================
+   BEAUTY & THE MATHS — Design System
+   ============================================= */
+
+:root {
+  /* Core Palette */
+  --bg:          #080c10;
+  --bg-panel:    #0d1219;
+  --bg-card:     #111820;
+  --bg-hover:    #161f2a;
+  --border:      #1e2d3d;
+  --border-glow: #00ff8833;
+
+  /* Greens — primary action/focus */
+  --green:       #00ff88;
+  --green-dim:   #00cc6a;
+  --green-muted: #00ff8818;
+  --green-glow:  0 0 20px #00ff8844, 0 0 60px #00ff8811;
+
+  /* Text */
+  --text-1:  #f0f6ff;
+  --text-2:  #8899aa;
+  --text-3:  #4a5a6a;
+
+  /* State colors */
+  --red:     #ff4466;
+  --red-dim: #ff446622;
+  --amber:   #ffaa00;
+  --amber-dim: #ffaa0022;
+  --blue:    #4488ff;
+
+  /* Typography — WhatsApp system font stack for max readability */
+  --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-nums:    "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+
+  /* Spacing */
+  --nav-h: 56px;
+  --panel-w: 300px;
+  --radius: 10px;
+  --radius-sm: 6px;
+
+  /* Transitions */
+  --fast: 80ms ease;
+  --smooth: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --spring: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 15px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: hidden;
+  height: 100dvh;
+  width: 100vw;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* =============================================
+   LAYOUT
+   ============================================= */
+#app { height: 100dvh; display: flex; flex-direction: column; }
+
+.layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+.navbar {
+  height: var(--nav-h);
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 32px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 100;
+}
+
+.navbar-logo {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.3px;
+  color: var(--text-1);
+  white-space: nowrap;
+}
+.navbar-logo span { color: var(--green); }
+
+.navbar-nav {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.nav-item {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--text-3);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--smooth);
+  text-transform: uppercase;
+  border: none;
+  background: none;
+  position: relative;
+  font-family: var(--font-display);
+}
+.nav-item:hover { color: var(--text-2); background: var(--bg-hover); }
+.nav-item.active { color: var(--green); }
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--green);
+  border-radius: 1px;
+}
+.nav-item .badge {
+  font-size: 9px;
+  background: var(--bg-card);
+  color: var(--text-3);
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-left: 4px;
+  border: 1px solid var(--border);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+/* Streak */
+.streak-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 14px;
+  cursor: default;
+}
+.streak-flame {
+  font-size: 18px;
+  animation: flicker 2s ease-in-out infinite;
+}
+@keyframes flicker {
+  0%, 100% { transform: scaleY(1) rotate(-2deg); }
+  50% { transform: scaleY(1.1) rotate(2deg); }
+}
+.streak-num {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--amber);
+}
+.streak-label {
+  font-size: 11px;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Day badge */
+.day-badge {
+  font-size: 12px;
+  color: var(--text-2);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 12px;
+}
+.day-badge span { color: var(--green); font-weight: 700; }
+
+/* =============================================
+   SIDE PANEL — Table Selector
+   ============================================= */
+.side-panel {
+  width: var(--panel-w);
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.panel-header {
+  padding: 20px 18px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.panel-title {
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-2);
+  margin-bottom: 4px;
+}
+.panel-subtitle {
+  font-size: 12px;
+  color: var(--text-3);
+  line-height: 1.5;
+}
+
+.panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+}
+
+/* Table Grid — 10 columns, cells 2–100 */
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 4px;
+}
+
+.table-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 11px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--smooth);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-3);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.table-cell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--green);
+  opacity: 0;
+  transition: var(--smooth);
+}
+
+.table-cell:hover {
+  border-color: var(--green-dim);
+  color: var(--text-2);
+  transform: scale(1.05);
+}
+
+.table-cell.selected {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green-muted);
+  box-shadow: var(--green-glow);
+}
+.table-cell.selected::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, var(--green-muted), transparent);
+}
+
+.table-cell.learned {
+  border-color: #1e3a2a;
+  color: #2d6b45;
+  background: #0a1f13;
+}
+.table-cell.learned.selected {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green-muted);
+}
+
+/* Panel footer */
+.panel-footer {
+  padding: 14px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.selected-info {
+  font-size: 12px;
+  color: var(--text-3);
+  text-align: center;
+}
+.selected-info strong { color: var(--green); font-size: 14px; font-weight: 700; }
+
+.btn-start {
+  width: 100%;
+  padding: 13px;
+  background: var(--green);
+  color: #000;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--smooth);
+  position: relative;
+  overflow: hidden;
+}
+.btn-start:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px #00ff8844;
+}
+.btn-start:active { transform: translateY(0); }
+.btn-start:disabled {
+  background: var(--bg-card);
+  color: var(--text-3);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* =============================================
+   MAIN ARENA
+   ============================================= */
+.main-arena {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Home / Idle screen */
+.home-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px;
+  text-align: center;
+}
+
+.home-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: var(--text-1);
+}
+.home-title .accent { color: var(--green); }
+
+.home-sub {
+  font-size: 14px;
+  color: var(--text-2);
+  max-width: 380px;
+  line-height: 1.7;
+}
+
+.home-stats {
+  display: flex;
+  gap: 24px;
+  margin-top: 8px;
+}
+.stat-chip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 20px;
+  text-align: center;
+}
+.stat-chip .num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--green);
+  display: block;
+}
+.stat-chip .lbl {
+  font-size: 11px;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hint-arrow {
+  font-size: 13px;
+  color: var(--text-3);
+  animation: pulse-hint 2s ease-in-out infinite;
+}
+@keyframes pulse-hint {
+  0%, 100% { opacity: 0.4; transform: translateX(0); }
+  50% { opacity: 0.9; transform: translateX(-6px); }
+}
+
+/* =============================================
+   QUESTION ARENA — Active session
+   ============================================= */
+.session-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Progress bar (top) */
+.session-progress-bar {
+  height: 3px;
+  background: var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.session-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--blue));
+  transition: width 0.3s ease;
+}
+
+/* Session header */
+.session-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.session-meta {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.meta-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-3);
+}
+.meta-chip .val {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-2);
+}
+.meta-chip.green .val { color: var(--green); }
+.meta-chip.red .val { color: var(--red); }
+.meta-chip.amber .val { color: var(--amber); }
+
+/* Timer */
+.timer-ring-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+}
+.timer-ring {
+  transform: rotate(-90deg);
+  width: 52px;
+  height: 52px;
+}
+.timer-ring-track {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 3;
+}
+.timer-ring-fill {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 138.2;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.1s linear, stroke 0.2s ease;
+}
+.timer-ring-fill.warning { stroke: var(--amber); }
+.timer-ring-fill.danger  { stroke: var(--red); }
+.timer-num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--text-1);
+}
+
+/* QUESTION DISPLAY */
+.question-zone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.question-type-tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-3);
+  margin-bottom: 20px;
+  font-weight: 500;
+  animation: fadeUp 0.3s ease;
+}
+
+.question-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(56px, 9vw, 100px);
+  letter-spacing: -1px;
+  color: var(--green);
+  text-shadow: var(--green-glow);
+  animation: questionPop 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  line-height: 1.05;
+  text-align: center;
+}
+
+@keyframes questionPop {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+@keyframes fadeUp {
+  from { transform: translateY(6px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Answer input */
+.answer-zone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+.answer-input-wrap {
+  position: relative;
+}
+.answer-input {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-1);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 30px;
+  width: 190px;
+  text-align: center;
+  padding: 14px 16px;
+  outline: none;
+  transition: var(--smooth);
+  letter-spacing: 0;
+}
+.answer-input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px var(--green-muted), var(--green-glow);
+}
+.answer-input.correct {
+  border-color: var(--green);
+  background: var(--green-muted);
+  animation: correctPulse 0.4s ease;
+}
+.answer-input.wrong {
+  border-color: var(--red);
+  background: var(--red-dim);
+  animation: shake 0.35s ease;
+}
+.answer-input.timeout {
+  border-color: var(--amber);
+  background: var(--amber-dim);
+}
+
+@keyframes correctPulse {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%  { transform: translateX(-8px); }
+  40%  { transform: translateX(8px); }
+  60%  { transform: translateX(-5px); }
+  80%  { transform: translateX(5px); }
+}
+
+/* Answer feedback flash */
+.feedback-flash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: var(--radius);
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+.feedback-flash.correct { background: var(--green-muted); opacity: 1; animation: flashOut 0.4s ease forwards; }
+.feedback-flash.wrong   { background: var(--red-dim);    opacity: 1; animation: flashOut 0.4s ease forwards; }
+@keyframes flashOut { to { opacity: 0; } }
+
+/* Combo */
+.combo-display {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--amber);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: var(--spring);
+}
+.combo-display.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+.combo-display .combo-num {
+  font-size: 28px;
+  display: block;
+  line-height: 1;
+  text-shadow: 0 0 20px #ffaa0066;
+}
+
+/* Q counter strip */
+.q-strip {
+  display: flex;
+  gap: 3px;
+  padding: 12px 32px;
+  overflow-x: auto;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.q-dot {
+  width: 20px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+  flex-shrink: 0;
+  transition: var(--smooth);
+}
+.q-dot.correct { background: var(--green); }
+.q-dot.wrong   { background: var(--red); }
+.q-dot.timeout { background: var(--amber); }
+.q-dot.active  { background: var(--text-2); animation: dotPulse 0.8s ease-in-out infinite; }
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+
+/* =============================================
+   NUMPAD (mobile)
+   ============================================= */
+.numpad {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+}
+.numpad-btn {
+  padding: 18px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-1);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  cursor: pointer;
+  transition: var(--fast);
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.numpad-btn:active { background: var(--bg-hover); transform: scale(0.95); }
+.numpad-btn.zero   { grid-column: span 2; }
+.numpad-btn.del    { color: var(--red); }
+.numpad-btn.enter  { background: var(--green); color: #000; font-weight: 800; }
+.numpad-btn.enter:active { background: var(--green-dim); }
+
+/* =============================================
+   SCORE / RESULTS SCREEN
+   ============================================= */
+.results-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  padding: 40px 32px;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.results-score-ring {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.results-score-ring svg { transform: rotate(-90deg); width: 140px; height: 140px; }
+.results-score-num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.results-score-num .big {
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--green);
+  line-height: 1;
+}
+.results-score-num .small {
+  font-size: 11px;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.results-title {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--text-1);
+  margin-bottom: 4px;
+}
+.results-sub { font-size: 13px; color: var(--text-2); }
+
+/* Stats grid */
+.results-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 680px;
+  margin-bottom: 28px;
+}
+.result-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+.result-stat .r-val {
+  font-weight: 700;
+  font-size: 26px;
+  display: block;
+  margin-bottom: 4px;
+}
+.result-stat .r-lbl {
+  font-size: 11px;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+}
+
+/* Q breakdown */
+.q-breakdown {
+  width: 100%;
+  max-width: 680px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.q-breakdown-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-3);
+}
+.q-list {
+  max-height: 220px;
+  overflow-y: auto;
+}
+.q-row {
+  display: grid;
+  grid-template-columns: 32px 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  transition: background 0.1s;
+}
+.q-row:last-child { border-bottom: none; }
+.q-row:hover { background: var(--bg-hover); }
+.q-row .q-idx { color: var(--text-3); font-size: 11px; }
+.q-row .q-expr { color: var(--text-2); font-family: var(--font-display); font-weight: 700; }
+.q-row .q-ans { color: var(--text-1); font-weight: 600; }
+.q-row .q-status { font-size: 14px; }
+
+/* Results actions */
+.results-actions {
+  display: flex;
+  gap: 12px;
+}
+.btn-retry, .btn-home {
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--smooth);
+  border: none;
+}
+.btn-retry {
+  background: var(--green);
+  color: #000;
+}
+.btn-retry:hover { box-shadow: 0 4px 20px #00ff8844; transform: translateY(-1px); }
+.btn-home {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+}
+.btn-home:hover { border-color: var(--text-3); color: var(--text-1); }
+
+/* =============================================
+   COMING SOON — Overlay content
+   ============================================= */
+.coming-soon-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px;
+  text-align: center;
+}
+.cs-icon { font-size: 56px; }
+.cs-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--text-1);
+}
+.cs-sub { font-size: 14px; color: var(--text-2); max-width: 320px; line-height: 1.7; }
+
+/* =============================================
+   MOBILE — Responsive
+   ============================================= */
+@media (max-width: 768px) {
+  :root { --panel-w: 240px; }
+
+  .navbar { padding: 0 14px; gap: 12px; }
+  .navbar-logo { font-size: 15px; }
+  .navbar-nav { display: none; }
+
+  .side-panel {
+    position: fixed;
+    left: 0;
+    top: var(--nav-h);
+    bottom: 0;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: 4px 0 24px #00000066;
+  }
+  .side-panel.open { transform: translateX(0); }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--text-2);
+    font-size: 18px;
+  }
+
+  /* Session — mobile layout */
+  .session-screen { flex-direction: column; }
+
+  .question-zone {
+    flex: 0 0 40%;
+    justify-content: center;
+  }
+  .question-text { font-size: clamp(44px, 15vw, 72px); }
+
+  .q-strip { display: none; }
+
+  .numpad {
+    display: grid;
+    flex: 0 0 60%;
+  }
+
+  .answer-zone { display: none; }
+
+  .results-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile menu button hidden on desktop */
+.mobile-menu-btn { display: none; }
+
+/* =============================================
+   UTILITY / ANIMATIONS
+   ============================================= */
+.glow-green { text-shadow: var(--green-glow); }
+
+.scan-line {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green-muted), transparent);
+  animation: scan 4s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.3;
+}
+@keyframes scan {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100vh); }
+}
+
+
+/* =============================================
+   MOBILE — FULL PHONE OPTIMIZATIONS
+   ============================================= */
+
+/* Safe area insets for notch/home bar phones */
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Overlay when side panel open on mobile */
+.panel-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 40;
+  backdrop-filter: blur(2px);
+}
+.panel-overlay.show { display: block; }
+
+@media (max-width: 768px) {
+  :root {
+    --nav-h: 52px;
+    --panel-w: 80vw;
+  }
+
+  /* Navbar */
+  .navbar { padding: 0 12px; gap: 10px; height: var(--nav-h); }
+  .navbar-logo { font-size: 14px; letter-spacing: -0.2px; }
+  .navbar-nav { display: none; }
+  .streak-label { display: none; }
+  .day-badge { display: none; }
+  .streak-display { padding: 5px 10px; gap: 5px; }
+  .streak-num { font-size: 15px; }
+  .streak-flame { font-size: 16px; }
+
+  /* Side panel — full slide */
+  .side-panel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 50;
+    width: var(--panel-w);
+    transform: translateX(-110%);
+    transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: 6px 0 32px rgba(0,0,0,0.8);
+    padding-top: var(--nav-h);
+  }
+  .side-panel.open { transform: translateX(0); }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    width: 38px; height: 38px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--text-2);
+    font-size: 17px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* HOME SCREEN MOBILE */
+  .home-screen {
+    padding: 24px 20px;
+    gap: 20px;
+    justify-content: center;
+  }
+  .home-title { font-size: clamp(26px, 8vw, 40px); }
+  .home-sub { font-size: 13px; }
+  .home-stats { gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .stat-chip { padding: 10px 16px; }
+  .stat-chip .num { font-size: 20px; }
+  .stat-chip .lbl { font-size: 10px; }
+
+  /* SESSION — 40/60 SPLIT */
+  .session-screen {
+    flex-direction: column;
+    height: calc(100dvh - var(--nav-h));
+  }
+
+  .session-progress-bar { height: 3px; }
+
+  .session-header {
+    padding: 10px 16px;
+    flex-shrink: 0;
+  }
+  .session-meta { gap: 12px; }
+  .meta-chip { font-size: 11px; }
+  .meta-chip .val { font-size: 13px; }
+  .timer-ring-wrap { width: 44px; height: 44px; }
+  .timer-ring { width: 44px; height: 44px; }
+  .timer-num { font-size: 12px; }
+
+  /* Question zone — 40% */
+  .question-zone {
+    flex: 0 0 38%;
+    padding: 8px 16px 4px;
+    justify-content: center;
+  }
+  .question-text {
+    font-size: clamp(42px, 14vw, 68px);
+    letter-spacing: -0.5px;
+  }
+  .question-type-tag { font-size: 10px; margin-bottom: 8px; }
+
+  .combo-display { top: 8px; right: 12px; font-size: 11px; }
+  .combo-display .combo-num { font-size: 20px; }
+
+  /* Answer zone hidden on mobile (use numpad) */
+  .answer-zone { display: none !important; }
+
+  /* Q strip hidden */
+  .q-strip { display: none; }
+
+  /* NUMPAD — 60% of screen */
+  .numpad {
+    display: grid !important;
+    flex: 1;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    background: var(--bg-panel);
+    border-top: 1px solid var(--border);
+    align-content: stretch;
+  }
+
+  .numpad-btn {
+    padding: 0;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-1);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    transition: background 80ms ease;
+  }
+  .numpad-btn:active { background: var(--bg-hover); transform: scale(0.94); }
+  .numpad-btn.zero { grid-column: span 2; }
+  .numpad-btn.del { color: var(--red); font-size: 18px; }
+  .numpad-btn.enter { background: var(--green); color: #000; font-weight: 700; font-size: 20px; }
+  .numpad-btn.enter:active { background: var(--green-dim); transform: scale(0.96); }
+
+  /* Answer display on mobile (above numpad) */
+  .mobile-answer-display {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 16px;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    flex-shrink: 0;
+  }
+  .mobile-answer-display .ans-val {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-1);
+    min-width: 80px;
+    text-align: center;
+    letter-spacing: 0;
+    padding: 6px 16px;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color var(--smooth);
+  }
+  .mobile-answer-display .ans-val.correct {
+    border-color: var(--green);
+    color: var(--green);
+  }
+  .mobile-answer-display .ans-val.wrong {
+    border-color: var(--red);
+    animation: shake 0.35s ease;
+  }
+  .mobile-answer-display .ans-val.timeout {
+    border-color: var(--amber);
+  }
+
+  /* RESULTS MOBILE */
+  .results-screen { padding: 20px 16px; }
+  .results-stats { grid-template-columns: repeat(2,1fr); gap: 8px; }
+  .result-stat { padding: 12px; }
+  .result-stat .r-val { font-size: 22px; }
+  .results-score-ring { width: 110px; height: 110px; }
+  .results-score-ring svg { width: 110px; height: 110px; }
+  .results-score-num .big { font-size: 32px; }
+  .results-title { font-size: 20px; }
+  .q-breakdown { margin-bottom: 16px; }
+  .results-actions { flex-direction: column; width: 100%; }
+  .btn-retry, .btn-home { width: 100%; text-align: center; padding: 14px; }
+
+  /* Table grid on mobile */
+  .table-grid { grid-template-columns: repeat(10,1fr); gap: 3px; }
+  .table-cell { font-size: 10px; border-radius: 4px; }
+
+  .panel-header { padding: 14px 14px 10px; }
+  .panel-body { padding: 10px; }
+  .panel-footer { padding: 10px; }
+  .btn-start { padding: 14px; font-size: 15px; }
+}
+
+/* Tiny phones */
+@media (max-width: 380px) {
+  .question-text { font-size: 38px; }
+  .numpad-btn { font-size: 18px; }
+  .table-cell { font-size: 9px; }
+}
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <div class="panel-overlay" id="panel-overlay"></div>
+
+  <script>
+// ===== SERVICE WORKER REGISTRATION =====
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    // Inline SW as blob
+    const swCode = `
+const CACHE='batm-v2';
+const ASSETS=['/'];
+self.addEventListener('install',e=>{self.skipWaiting();});
+self.addEventListener('activate',e=>{self.clients.claim();});
+self.addEventListener('fetch',e=>{
+  e.respondWith(
+    caches.match(e.request).then(c=>c||fetch(e.request).catch(()=>new Response('<h1>Offline</h1>',{headers:{'Content-Type':'text/html'}})))
+  );
+});
+    `;
+    const blob = new Blob([swCode], {type:'application/javascript'});
+    const url = URL.createObjectURL(blob);
+    navigator.serviceWorker.register(url).catch(()=>{});
+  });
+}
+
+// ===== INSTALL PROMPT =====
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  setTimeout(() => showInstallBanner(), 3000);
+});
+
+function showInstallBanner() {
+  if (!deferredPrompt) return;
+  const banner = document.createElement('div');
+  banner.id = 'install-banner';
+  banner.style.cssText = `
+    position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);
+    background:#111820;border:1px solid #00ff8866;border-radius:12px;padding:12px 20px;
+    display:flex;align-items:center;gap:12px;z-index:9999;box-shadow:0 4px 24px #00000088;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;
+    color:#f0f6ff;white-space:nowrap;animation:slideUp 0.4s ease;
+  `;
+  banner.innerHTML = `
+    <span>📲</span>
+    <span>Add to Home Screen</span>
+    <button onclick="installApp()" style="background:#00ff88;color:#000;border:none;border-radius:6px;padding:6px 14px;font-weight:700;font-size:12px;cursor:pointer;">Install</button>
+    <button onclick="this.closest('#install-banner').remove()" style="background:none;border:none;color:#4a5a6a;cursor:pointer;font-size:18px;padding:0 4px;">×</button>
+  `;
+  document.body.appendChild(banner);
+}
+
+function installApp() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(() => {
+    deferredPrompt = null;
+    const b = document.getElementById('install-banner');
+    if (b) b.remove();
+  });
+}
+
+// ===== QUESTION GENERATOR =====
+// =============================================
+// BEAUTY & THE MATHS — Question Generator
+// Core algorithm for 90-question sessions
+// =============================================
+
+/**
+ * Session structure:
+ *  - 50 questions: products of selected 2 tables (multiplication)
+ *  - 40 questions: mixed addition, subtraction, AND cross-products
+ *
+ * Weights ensure even coverage and no boring repetition.
+ * Fisher-Yates shuffle used throughout.
+ */
+
+const TABLES_RANGE = [2, 100];
+const MULT_RANGE = [1, 12]; // multiplier range per table
+
+// ---- Utilities ----
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// ---- Question factories ----
+
+/** Multiplication: tableNum × n */
+function makeMultQ(tableNum, n) {
+  const ans = tableNum * n;
+  return {
+    type: 'mult',
+    expr: `${tableNum} × ${n}`,
+    a: tableNum, op: '×', b: n,
+    answer: ans,
+    display: `${tableNum} × ${n} = ?`,
+    tableTag: `${tableNum}×`,
+  };
+}
+
+/** Addition within a table context: e.g. tableNum×a + tableNum×b simplified, or plain */
+function makeAddQ(maxVal = 200) {
+  const a = randInt(2, maxVal);
+  const b = randInt(2, maxVal);
+  return {
+    type: 'add',
+    expr: `${a} + ${b}`,
+    a, op: '+', b,
+    answer: a + b,
+    display: `${a} + ${b} = ?`,
+    tableTag: null,
+  };
+}
+
+/** Subtraction (always positive result) */
+function makeSubQ(maxVal = 200) {
+  let a = randInt(2, maxVal);
+  let b = randInt(2, maxVal);
+  if (b > a) [a, b] = [b, a];
+  return {
+    type: 'sub',
+    expr: `${a} − ${b}`,
+    a, op: '−', b,
+    answer: a - b,
+    display: `${a} − ${b} = ?`,
+    tableTag: null,
+  };
+}
+
+/** Cross-product: t1 × n + t2 × m style (bonus complexity) */
+function makeCrossQ(t1, t2) {
+  const n = randInt(1, 12);
+  const m = randInt(1, 12);
+  const a = t1 * n;
+  const b = t2 * m;
+  const ops = ['+', '−'];
+  const op = ops[randInt(0, 1)];
+  const answer = op === '+' ? a + b : Math.abs(a - b);
+  const expr = op === '+' ? `${a} + ${b}` : `${Math.max(a,b)} − ${Math.min(a,b)}`;
+  return {
+    type: 'cross',
+    expr,
+    a: op === '+' ? a : Math.max(a,b),
+    op,
+    b: op === '+' ? b : Math.min(a,b),
+    answer,
+    display: expr + ' = ?',
+    tableTag: `${t1}×+${t2}×`,
+  };
+}
+
+// =============================================
+// MAIN GENERATOR
+// =============================================
+
+/**
+ * generateSession(t1, t2)
+ * Returns array of 90 question objects.
+ *
+ * Breakdown:
+ *   Block A (50q): pure multiplication of t1 and t2
+ *     - 25 from t1 (all 12 multiples + 13 random re-hits weighted to hard ones)
+ *     - 25 from t2 (same)
+ *   Block B (40q): mixed
+ *     - 12 addition
+ *     - 12 subtraction
+ *     - 16 cross/mixed involving t1 and t2
+ */
+function generateSession(t1, t2) {
+  const questions = [];
+
+  // ---- Block A: 50 multiplication ----
+  // All 12 standard multiples for each table, then fill to 25 with hard ones (7-12)
+  function multBlock(tNum, count) {
+    const pool = [];
+    // All 12 first
+    for (let n = 1; n <= 12; n++) pool.push(makeMultQ(tNum, n));
+    shuffle(pool);
+
+    // Fill remaining with harder multipliers (7-12 weighted)
+    const hardPool = [];
+    for (let extra = 0; extra < count - 12; extra++) {
+      hardPool.push(makeMultQ(tNum, randInt(7, 12)));
+    }
+    return shuffle([...pool, ...hardPool]).slice(0, count);
+  }
+
+  const blockA = shuffle([...multBlock(t1, 25), ...multBlock(t2, 25)]);
+  questions.push(...blockA);
+
+  // ---- Block B: 40 mixed ----
+  const blockB = [];
+
+  // 12 addition
+  for (let i = 0; i < 12; i++) {
+    // Mix: some involve multiples of tables
+    if (i < 6) {
+      // plain addition up to ~200
+      blockB.push(makeAddQ(150));
+    } else {
+      // addition using table products
+      const n1 = randInt(1, 12), n2 = randInt(1, 12);
+      const a = t1 * n1, b = t2 * n2;
+      blockB.push({
+        type: 'add', expr: `${a} + ${b}`,
+        a, op: '+', b, answer: a + b,
+        display: `${a} + ${b} = ?`, tableTag: `${t1}×${t2}×`
+      });
+    }
+  }
+
+  // 12 subtraction
+  for (let i = 0; i < 12; i++) {
+    if (i < 6) {
+      blockB.push(makeSubQ(150));
+    } else {
+      const n1 = randInt(1, 12), n2 = randInt(1, 12);
+      const raw = [t1 * n1, t2 * n2];
+      raw.sort((a, b) => b - a);
+      blockB.push({
+        type: 'sub', expr: `${raw[0]} − ${raw[1]}`,
+        a: raw[0], op: '−', b: raw[1], answer: raw[0] - raw[1],
+        display: `${raw[0]} − ${raw[1]} = ?`, tableTag: `${t1}×${t2}×`
+      });
+    }
+  }
+
+  // 16 cross/mixed
+  for (let i = 0; i < 16; i++) {
+    blockB.push(makeCrossQ(t1, t2));
+  }
+
+  questions.push(...shuffle(blockB));
+
+  // Final: tag each with index and blank user fields
+  return questions.map((q, i) => ({
+    ...q,
+    index: i,
+    userAnswer: null,
+    isCorrect: null,
+    timeTaken: null,
+    timedOut: false,
+  }));
+}
+
+/**
+ * scoreSession(questions)
+ * Returns score object with full analytics.
+ */
+function scoreSession(questions) {
+  const total = questions.length;
+  let correct = 0, wrong = 0, timeouts = 0;
+  let totalTime = 0;
+  const byType = { mult: { c: 0, t: 0 }, add: { c: 0, t: 0 }, sub: { c: 0, t: 0 }, cross: { c: 0, t: 0 } };
+
+  questions.forEach(q => {
+    if (q.timedOut) {
+      timeouts++;
+    } else if (q.isCorrect) {
+      correct++;
+    } else {
+      wrong++;
+    }
+    if (q.timeTaken != null) totalTime += q.timeTaken;
+    const bt = byType[q.type] || { c: 0, t: 0 };
+    bt.t++;
+    if (q.isCorrect) bt.c++;
+    byType[q.type] = bt;
+  });
+
+  const accuracy = Math.round((correct / total) * 100);
+  const avgTime = totalTime > 0 ? (totalTime / total / 1000).toFixed(1) : '--';
+
+  // Score: 100 base * accuracy * speed bonus
+  const speedBonus = avgTime !== '--' ? Math.max(1, (10 - parseFloat(avgTime)) / 10) : 1;
+  const finalScore = Math.round(accuracy * speedBonus);
+
+  let grade = 'F';
+  if (finalScore >= 95) grade = 'S+';
+  else if (finalScore >= 85) grade = 'A';
+  else if (finalScore >= 70) grade = 'B';
+  else if (finalScore >= 55) grade = 'C';
+  else if (finalScore >= 40) grade = 'D';
+
+  let title = 'Keep Going';
+  if (grade === 'S+') title = 'LIGHTNING MASTER ⚡';
+  else if (grade === 'A') title = 'Sharp & Fast 🎯';
+  else if (grade === 'B') title = 'Good Momentum 💪';
+  else if (grade === 'C') title = 'Building Up ⚙️';
+  else title = 'Rise Tomorrow 🌅';
+
+  return {
+    total, correct, wrong, timeouts,
+    accuracy, avgTime, finalScore, grade, title,
+    byType,
+    questions,
+  };
+}
+
+/**
+ * getComboMessage(streak)
+ * Returns motivational text for combo streaks.
+ */
+function getComboMessage(streak) {
+  if (streak >= 10) return { label: 'UNSTOPPABLE', emoji: '⚡' };
+  if (streak >= 7)  return { label: 'ON FIRE',     emoji: '🔥' };
+  if (streak >= 5)  return { label: 'COMBO',       emoji: '✨' };
+  if (streak >= 3)  return { label: 'STREAK',      emoji: '💥' };
+  return null;
+}
+
+
+// ===== STORAGE =====
+// =============================================
+// BEAUTY & THE MATHS — Storage / Progress
+// =============================================
+
+const KEYS = {
+  PROGRESS:    'batm_progress',
+  STREAK:      'batm_streak',
+  LEARNED:     'batm_learned_tables',
+  HISTORY:     'batm_session_history',
+  LAST_SESSION:'batm_last_session_date',
+};
+
+// ---- Progress ----
+function loadProgress() {
+  try {
+    return JSON.parse(localStorage.getItem(KEYS.PROGRESS)) || {};
+  } catch { return {}; }
+}
+
+function saveProgress(data) {
+  localStorage.setItem(KEYS.PROGRESS, JSON.stringify(data));
+}
+
+// ---- Streak ----
+function loadStreak() {
+  try {
+    return JSON.parse(localStorage.getItem(KEYS.STREAK)) || { count: 0, lastDate: null };
+  } catch { return { count: 0, lastDate: null }; }
+}
+
+function updateStreak() {
+  const today = new Date().toDateString();
+  const streak = loadStreak();
+
+  if (streak.lastDate === today) return streak; // already logged today
+
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+
+  if (streak.lastDate === yesterday.toDateString()) {
+    streak.count += 1;
+  } else if (streak.lastDate !== today) {
+    streak.count = 1; // reset
+  }
+
+  streak.lastDate = today;
+  localStorage.setItem(KEYS.STREAK, JSON.stringify(streak));
+  return streak;
+}
+
+// ---- Learned Tables ----
+function loadLearnedTables() {
+  try {
+    return JSON.parse(localStorage.getItem(KEYS.LEARNED)) || [];
+  } catch { return []; }
+}
+
+function saveLearnedTables(tables) {
+  localStorage.setItem(KEYS.LEARNED, JSON.stringify(tables));
+}
+
+// ---- Session History ----
+function loadHistory() {
+  try {
+    return JSON.parse(localStorage.getItem(KEYS.HISTORY)) || [];
+  } catch { return []; }
+}
+
+function saveSessionResult(result) {
+  const history = loadHistory();
+  history.unshift({
+    date: new Date().toISOString(),
+    tables: result.tables,
+    score: result.finalScore,
+    accuracy: result.accuracy,
+    grade: result.grade,
+    avgTime: result.avgTime,
+    correct: result.correct,
+    total: result.total,
+  });
+  // Keep last 30 sessions
+  localStorage.setItem(KEYS.HISTORY, JSON.stringify(history.slice(0, 30)));
+  updateStreak();
+}
+
+function getTodaySessionCount() {
+  const history = loadHistory();
+  const today = new Date().toDateString();
+  return history.filter(s => new Date(s.date).toDateString() === today).length;
+}
+
+
+// ===== SOUNDS =====
+// =============================================
+// BEAUTY & THE MATHS — Sound Engine
+// Web Audio API — no external files needed
+// =============================================
+
+let ctx = null;
+
+function getCtx() {
+  if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+  return ctx;
+}
+
+function play(freq, type, duration, gainVal = 0.15, fadeOut = true) {
+  try {
+    const ac = getCtx();
+    const osc = ac.createOscillator();
+    const gain = ac.createGain();
+    osc.connect(gain);
+    gain.connect(ac.destination);
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, ac.currentTime);
+    gain.gain.setValueAtTime(gainVal, ac.currentTime);
+    if (fadeOut) gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + duration);
+    osc.start(ac.currentTime);
+    osc.stop(ac.currentTime + duration);
+  } catch (e) { /* silent fail */ }
+}
+
+const sounds = {
+  correct() {
+    play(880, 'sine', 0.12, 0.1);
+    setTimeout(() => play(1100, 'sine', 0.1, 0.08), 60);
+  },
+  wrong() {
+    play(220, 'sawtooth', 0.18, 0.1);
+  },
+  timeout() {
+    play(180, 'square', 0.3, 0.08);
+    setTimeout(() => play(160, 'square', 0.2, 0.06), 100);
+  },
+  combo() {
+    [880, 1046, 1318, 1760].forEach((f, i) => {
+      setTimeout(() => play(f, 'sine', 0.1, 0.07), i * 50);
+    });
+  },
+  sessionStart() {
+    [440, 550, 660, 880].forEach((f, i) => {
+      setTimeout(() => play(f, 'sine', 0.12, 0.06), i * 80);
+    });
+  },
+  sessionEnd() {
+    [660, 550, 440, 880].forEach((f, i) => {
+      setTimeout(() => play(f, 'sine', 0.15, 0.08), i * 100);
+    });
+  },
+  tick() {
+    play(440, 'sine', 0.05, 0.03, false);
+  }
+};
+
+
+// ===== MAIN APP =====
+// =============================================
+// BEAUTY & THE MATHS — Main App
+// =============================================
+
+// =============================================
+// STATE
+// =============================================
+const state = {
+  page: 'home',        // home | session | results
+  selectedTables: [],  // up to 2
+  learnedTables: [],
+  questions: [],
+  currentQ: 0,
+  results: null,
+  timer: null,
+  timeLeft: 10,
+  combo: 0,
+  streak: 0,
+  isMobile: window.innerWidth <= 768,
+  panelOpen: false,
+  pendingInput: '',
+};
+
+const QUESTION_TIME = 10; // seconds per question
+const TOTAL_QUESTIONS = 90;
+
+// =============================================
+// INIT
+// =============================================
+function init() {
+  const streakData = loadStreak();
+  state.streak = streakData.count;
+  state.learnedTables = loadLearnedTables();
+
+  renderApp();
+  bindGlobalEvents();
+}
+
+// =============================================
+// RENDER
+// =============================================
+function renderApp() {
+  document.getElementById('app').innerHTML = `
+    <div class="scan-line"></div>
+    ${renderNavbar()}
+    <div class="layout">
+      ${renderSidePanel()}
+      <main class="main-arena" id="main-arena">
+        ${renderMainContent()}
+      </main>
+    </div>
+  `;
+  bindEvents();
+}
+
+function renderNavbar() {
+  const todaySessions = getTodaySessionCount();
+  return `
+    <nav class="navbar">
+      <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+      <div class="navbar-logo">Beauty & The <span>Maths</span></div>
+      <div class="navbar-nav">
+        <button class="nav-item ${state.page !== 'coming' ? 'active' : ''}" data-page="home">Practice</button>
+        <button class="nav-item" data-page="coming" data-label="Progress">Progress <span class="badge">Soon</span></button>
+        <button class="nav-item" data-page="coming" data-label="Leaderboard">Leaderboard <span class="badge">Soon</span></button>
+        <button class="nav-item" data-page="coming" data-label="Challenges">Challenges <span class="badge">Soon</span></button>
+        <button class="nav-item" data-page="coming" data-label="Stats">Stats <span class="badge">Soon</span></button>
+      </div>
+      <div class="navbar-right">
+        <div class="day-badge">Today <span>${todaySessions} session${todaySessions !== 1 ? 's' : ''}</span></div>
+        <div class="streak-display">
+          <span class="streak-flame">${state.streak >= 3 ? '🔥' : '⚡'}</span>
+          <span class="streak-num">${state.streak}</span>
+          <span class="streak-label">day streak</span>
+        </div>
+      </div>
+    </nav>
+  `;
+}
+
+function renderSidePanel() {
+  const learnedSet = new Set(state.learnedTables);
+  const selectedSet = new Set(state.selectedTables);
+  const canStart = state.selectedTables.length === 2;
+
+  let cells = '';
+  for (let i = 2; i <= 100; i++) {
+    const isLearned = learnedSet.has(i);
+    const isSelected = selectedSet.has(i);
+    let cls = 'table-cell';
+    if (isLearned) cls += ' learned';
+    if (isSelected) cls += ' selected';
+    cells += `<div class="${cls}" data-table="${i}">${i}</div>`;
+  }
+
+  const [t1, t2] = state.selectedTables;
+
+  return `
+    <aside class="side-panel ${state.panelOpen ? 'open' : ''}" id="side-panel">
+      <div class="panel-header">
+        <div class="panel-title">Tables (2–100)</div>
+        <div class="panel-subtitle">Select 2 tables you're practicing today. Mastered = green glow.</div>
+      </div>
+      <div class="panel-body">
+        <div class="table-grid">${cells}</div>
+      </div>
+      <div class="panel-footer">
+        <div class="selected-info">
+          ${canStart
+            ? `Today: <strong>${t1}×</strong> &amp; <strong>${t2}×</strong> — 90 questions`
+            : `Select <strong>${2 - state.selectedTables.length}</strong> more table${state.selectedTables.length === 1 ? '' : 's'}`
+          }
+        </div>
+        <button class="btn-start" id="btn-start" ${!canStart ? 'disabled' : ''}>
+          ${canStart ? '⚡ Start Session' : 'Select 2 Tables'}
+        </button>
+      </div>
+    </aside>
+  `;
+}
+
+function renderMainContent() {
+  switch (state.page) {
+    case 'home':    return renderHome();
+    case 'session': return renderSession();
+    case 'results': return renderResults();
+    case 'coming':  return renderComingSoon();
+  }
+}
+
+function renderHome() {
+  return `
+    <div class="home-screen">
+      <div class="home-title">Master Tables<br><span class="accent">2× Speed.</span></div>
+      <p class="home-sub">Select 2 tables from the panel, then fire through 90 questions in 15 minutes. Each question — 10 seconds. No mercy.</p>
+      <div class="home-stats">
+        <div class="stat-chip"><span class="num">90</span><span class="lbl">Questions</span></div>
+        <div class="stat-chip"><span class="num">10s</span><span class="lbl">Per Question</span></div>
+        <div class="stat-chip"><span class="num">15</span><span class="lbl">Minutes</span></div>
+        <div class="stat-chip"><span class="num">${state.learnedTables.length}</span><span class="lbl">Mastered</span></div>
+      </div>
+      <div class="hint-arrow">← Pick your 2 tables to begin</div>
+    </div>
+  `;
+}
+
+function renderSession() {
+  const q = state.questions[state.currentQ];
+  if (!q) return '';
+
+  const progress = (state.currentQ / TOTAL_QUESTIONS) * 100;
+  const circumference = 138.2;
+  const offset = circumference - (state.timeLeft / QUESTION_TIME) * circumference;
+  const timerClass = state.timeLeft <= 3 ? 'danger' : state.timeLeft <= 5 ? 'warning' : '';
+
+  const dots = state.questions.map((sq, i) => {
+    let cls = 'q-dot';
+    if (i === state.currentQ) cls += ' active';
+    else if (sq.isCorrect === true) cls += ' correct';
+    else if (sq.timedOut) cls += ' timeout';
+    else if (sq.isCorrect === false) cls += ' wrong';
+    return `<div class="${cls}"></div>`;
+  }).join('');
+
+  const typeLabel = { mult: '✕ Multiplication', add: '+ Addition', sub: '− Subtraction', cross: '⊕ Mixed' }[q.type] || '';
+
+  return `
+    <div class="session-screen">
+      <div class="session-progress-bar">
+        <div class="session-progress-fill" style="width:${progress}%"></div>
+      </div>
+
+      <div class="session-header">
+        <div class="session-meta">
+          <div class="meta-chip green">
+            <span>Q</span><span class="val">${state.currentQ + 1}/${TOTAL_QUESTIONS}</span>
+          </div>
+          <div class="meta-chip">
+            <span>✓</span>
+            <span class="val">${state.questions.filter(q=>q.isCorrect).length}</span>
+          </div>
+          <div class="meta-chip red">
+            <span>✗</span>
+            <span class="val">${state.questions.filter(q=>q.isCorrect===false||q.timedOut).length}</span>
+          </div>
+          <div class="meta-chip amber">
+            <span>Tables</span>
+            <span class="val">${state.selectedTables.join(' & ')}×</span>
+          </div>
+        </div>
+
+        <div class="timer-ring-wrap">
+          <svg class="timer-ring" viewBox="0 0 46 46">
+            <circle class="timer-ring-track" cx="23" cy="23" r="22"/>
+            <circle class="timer-ring-fill ${timerClass}"
+              cx="23" cy="23" r="22"
+              stroke-dasharray="${circumference}"
+              stroke-dashoffset="${offset}"/>
+          </svg>
+          <div class="timer-num">${state.timeLeft}</div>
+        </div>
+      </div>
+
+      <div class="question-zone" id="question-zone">
+        <div class="combo-display ${state.combo >= 3 ? 'visible' : ''}" id="combo-display">
+          ${state.combo >= 3 ? `<span class="combo-num">×${state.combo}</span>${getComboMessage(state.combo)?.label || ''}` : ''}
+        </div>
+        <div class="question-type-tag">${typeLabel}</div>
+        <div class="question-text" id="question-text">${q.display.replace('= ?', '')}<span style="color:var(--text-3)">= ?</span></div>
+        <div class="answer-zone">
+          <div class="answer-input-wrap">
+            <input
+              class="answer-input"
+              id="answer-input"
+              type="number"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="…"
+              autofocus
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="q-strip">${dots}</div>
+
+      <!-- Mobile answer display -->
+      <div class="mobile-answer-display" id="mobile-ans-display" style="display:none">
+        <div class="ans-val" id="mobile-ans-val">_</div>
+      </div>
+
+      <!-- Mobile numpad -->
+      <div class="numpad" id="numpad">
+        ${[1,2,3,4,5,6,7,8,9].map(n=>`<button class="numpad-btn" data-num="${n}">${n}</button>`).join('')}
+        <button class="numpad-btn del" id="np-del">⌫</button>
+        <button class="numpad-btn zero" data-num="0">0</button>
+        <button class="numpad-btn enter" id="np-enter">↵</button>
+      </div>
+    </div>
+  `;
+}
+
+function renderResults() {
+  const r = state.results;
+  if (!r) return '';
+
+  const circumference = 283;
+  const offset = circumference - (r.accuracy / 100) * circumference;
+  const gradeColor = { 'S+': '#00ff88', A: '#00ff88', B: '#4488ff', C: '#ffaa00', D: '#ff8844', F: '#ff4466' }[r.grade] || '#888';
+
+  const qRows = r.questions.map((q, i) => `
+    <div class="q-row">
+      <span class="q-idx">${i + 1}</span>
+      <span class="q-expr">${q.expr}</span>
+      <span class="q-ans">${q.timedOut ? `—` : `${q.userAnswer}`} <span style="color:var(--text-3);font-size:11px">(${q.answer})</span></span>
+      <span class="q-status">${q.timedOut ? '⏱' : q.isCorrect ? '✅' : '❌'}</span>
+    </div>
+  `).join('');
+
+  return `
+    <div class="results-screen">
+      <div class="results-header">
+        <div class="results-score-ring">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="var(--border)" stroke-width="6"/>
+            <circle cx="50" cy="50" r="45" fill="none"
+              stroke="${gradeColor}" stroke-width="6"
+              stroke-linecap="round"
+              stroke-dasharray="${circumference}"
+              stroke-dashoffset="${offset}"
+              style="filter: drop-shadow(0 0 8px ${gradeColor}55)"/>
+          </svg>
+          <div class="results-score-num">
+            <span class="big" style="color:${gradeColor}">${r.grade}</span>
+            <span class="small">${r.finalScore}pts</span>
+          </div>
+        </div>
+        <div class="results-title">${r.title}</div>
+        <div class="results-sub">Tables ${state.selectedTables.join(' & ')}× · ${new Date().toLocaleDateString()}</div>
+      </div>
+
+      <div class="results-stats">
+        <div class="result-stat">
+          <span class="r-val" style="color:var(--green)">${r.correct}</span>
+          <span class="r-lbl">Correct</span>
+        </div>
+        <div class="result-stat">
+          <span class="r-val" style="color:var(--red)">${r.wrong}</span>
+          <span class="r-lbl">Wrong</span>
+        </div>
+        <div class="result-stat">
+          <span class="r-val" style="color:var(--amber)">${r.timeouts}</span>
+          <span class="r-lbl">Timeouts</span>
+        </div>
+        <div class="result-stat">
+          <span class="r-val" style="color:var(--blue)">${r.avgTime}s</span>
+          <span class="r-lbl">Avg Speed</span>
+        </div>
+      </div>
+
+      <div class="q-breakdown">
+        <div class="q-breakdown-header">Question Breakdown</div>
+        <div class="q-list">${qRows}</div>
+      </div>
+
+      <div class="results-actions">
+        <button class="btn-retry" id="btn-retry">⚡ Go Again</button>
+        <button class="btn-home" id="btn-home">← Home</button>
+      </div>
+    </div>
+  `;
+}
+
+function renderComingSoon() {
+  const labels = { Progress:'📈', Leaderboard:'🏆', Challenges:'⚔️', Stats:'📊' };
+  const label = state.comingLabel || 'Feature';
+  return `
+    <div class="coming-soon-page">
+      <div class="cs-icon">${labels[label] || '🚀'}</div>
+      <div class="cs-title">${label}</div>
+      <div class="cs-sub">This feature is being crafted with the same obsession as the questions. Coming soon.</div>
+    </div>
+  `;
+}
+
+// =============================================
+// SESSION ENGINE
+// =============================================
+function startSession() {
+  if (state.selectedTables.length !== 2) return;
+  const [t1, t2] = state.selectedTables;
+  state.questions = generateSession(t1, t2);
+  state.currentQ = 0;
+  state.combo = 0;
+  state.page = 'session';
+  renderApp();
+  setTimeout(() => {
+    sounds.sessionStart();
+    focusInput();
+    startTimer();
+  }, 100);
+}
+
+function startTimer() {
+  clearInterval(state.timer);
+  state.timeLeft = QUESTION_TIME;
+  updateTimerUI();
+
+  state.timer = setInterval(() => {
+    state.timeLeft--;
+    updateTimerUI();
+
+    if (state.timeLeft <= 3 && state.timeLeft > 0) {
+      sounds.tick();
+    }
+
+    if (state.timeLeft <= 0) {
+      onTimeout();
+    }
+  }, 1000);
+}
+
+function onTimeout() {
+  clearInterval(state.timer);
+  const q = state.questions[state.currentQ];
+  q.timedOut = true;
+  q.isCorrect = false;
+  q.timeTaken = QUESTION_TIME * 1000;
+  state.combo = 0;
+  sounds.timeout();
+  flashInput('timeout');
+  setTimeout(advanceQuestion, 600);
+}
+
+function submitAnswer() {
+  const input = document.getElementById('answer-input');
+  const val = input ? parseInt(input.value || state.pendingInput, 10) : parseInt(state.pendingInput, 10);
+  if (isNaN(val)) return;
+
+  clearInterval(state.timer);
+  const q = state.questions[state.currentQ];
+  const timeTaken = (QUESTION_TIME - state.timeLeft) * 1000;
+  q.userAnswer = val;
+  q.timeTaken = timeTaken;
+  q.isCorrect = val === q.answer;
+
+  if (q.isCorrect) {
+    state.combo++;
+    sounds.correct();
+    if (state.combo >= 3) sounds.combo();
+    flashInput('correct');
+  } else {
+    state.combo = 0;
+    sounds.wrong();
+    flashInput('wrong');
+  }
+
+  setTimeout(advanceQuestion, 350);
+}
+
+function advanceQuestion() {
+  state.currentQ++;
+
+  if (state.currentQ >= TOTAL_QUESTIONS) {
+    endSession();
+    return;
+  }
+
+  state.pendingInput = '';
+  updateSessionUI();
+  focusInput();
+  startTimer();
+}
+
+function endSession() {
+  const score = scoreSession(state.questions);
+  score.tables = state.selectedTables;
+  state.results = score;
+
+  // Mark tables as learned
+  const newLearned = new Set([...state.learnedTables, ...state.selectedTables]);
+  state.learnedTables = [...newLearned];
+  saveLearnedTables(state.learnedTables);
+  saveSessionResult(score);
+
+  state.streak = loadStreak().count;
+  sounds.sessionEnd();
+  state.page = 'results';
+  renderApp();
+}
+
+// =============================================
+// UI UPDATES (partial — avoid full re-render)
+// =============================================
+function updateSessionUI() {
+  const q = state.questions[state.currentQ];
+  if (!q) return;
+
+  // Question text
+  const qt = document.getElementById('question-text');
+  if (qt) {
+    qt.innerHTML = `${q.display.replace('= ?', '')}<span style="color:var(--text-3)">= ?</span>`;
+    qt.style.animation = 'none';
+    qt.offsetHeight; // reflow
+    qt.style.animation = '';
+  }
+
+  // Clear input
+  const input = document.getElementById('answer-input');
+  if (input) { input.value = ''; input.className = 'answer-input'; }
+  // Clear mobile display
+  const mobileAns = document.getElementById('mobile-ans-val');
+  if (mobileAns) { mobileAns.textContent = '_'; mobileAns.className = 'ans-val'; }
+  const mobileDisp = document.getElementById('mobile-ans-display');
+  if (mobileDisp) mobileDisp.style.display = '';
+
+  // Progress
+  const fill = document.querySelector('.session-progress-fill');
+  if (fill) fill.style.width = `${(state.currentQ / TOTAL_QUESTIONS) * 100}%`;
+
+  // q strip dots
+  const dots = document.querySelectorAll('.q-dot');
+  dots.forEach((dot, i) => {
+    const sq = state.questions[i];
+    dot.className = 'q-dot' +
+      (i === state.currentQ ? ' active' : '') +
+      (sq.isCorrect === true ? ' correct' : '') +
+      (sq.timedOut ? ' timeout' : '') +
+      (sq.isCorrect === false && !sq.timedOut ? ' wrong' : '');
+  });
+
+  // Meta chips
+  const metaChips = document.querySelectorAll('.meta-chip .val');
+  if (metaChips[0]) metaChips[0].textContent = `${state.currentQ + 1}/${TOTAL_QUESTIONS}`;
+  if (metaChips[1]) metaChips[1].textContent = state.questions.filter(q=>q.isCorrect).length;
+  if (metaChips[2]) metaChips[2].textContent = state.questions.filter(q=>q.isCorrect===false||q.timedOut).length;
+
+  // Combo
+  const combo = document.getElementById('combo-display');
+  if (combo) {
+    const msg = getComboMessage(state.combo);
+    if (msg && state.combo >= 3) {
+      combo.className = 'combo-display visible';
+      combo.innerHTML = `<span class="combo-num">×${state.combo}</span>${msg.label}`;
+    } else {
+      combo.className = 'combo-display';
+    }
+  }
+
+  // Type tag
+  const typeEl = document.querySelector('.question-type-tag');
+  if (typeEl) {
+    const typeLabel = { mult: '✕ Multiplication', add: '+ Addition', sub: '− Subtraction', cross: '⊕ Mixed' }[q.type] || '';
+    typeEl.textContent = typeLabel;
+  }
+}
+
+function updateTimerUI() {
+  const circumference = 138.2;
+  const offset = circumference - (state.timeLeft / QUESTION_TIME) * circumference;
+  const fill = document.querySelector('.timer-ring-fill');
+  const num = document.querySelector('.timer-num');
+
+  if (fill) {
+    fill.style.strokeDashoffset = offset;
+    fill.className = 'timer-ring-fill' +
+      (state.timeLeft <= 3 ? ' danger' : state.timeLeft <= 5 ? ' warning' : '');
+  }
+  if (num) num.textContent = state.timeLeft;
+}
+
+function flashInput(type) {
+  const input = document.getElementById('answer-input');
+  if (input) {
+    input.className = `answer-input ${type}`;
+    setTimeout(() => { if (input) input.className = 'answer-input'; }, 350);
+  }
+  const mobileAns = document.getElementById('mobile-ans-val');
+  if (mobileAns) {
+    mobileAns.className = `ans-val ${type}`;
+    setTimeout(() => { if (mobileAns) mobileAns.className = 'ans-val'; }, 350);
+  }
+}
+
+function focusInput() {
+  if (!state.isMobile) {
+    const input = document.getElementById('answer-input');
+    if (input) input.focus();
+  }
+}
+
+// =============================================
+// EVENTS
+// =============================================
+function bindGlobalEvents() {
+  window.addEventListener('resize', () => {
+    state.isMobile = window.innerWidth <= 768;
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (state.page !== 'session') return;
+    if (e.key === 'Enter') submitAnswer();
+  });
+}
+
+function bindEvents() {
+  // Navbar page navigation
+  document.querySelectorAll('.nav-item[data-page]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const page = btn.dataset.page;
+      if (page === 'coming') {
+        state.comingLabel = btn.dataset.label;
+        state.page = 'coming';
+      } else {
+        state.page = page;
+      }
+      if (state.page !== 'session') clearInterval(state.timer);
+      updateMainContent();
+      updateNavActive();
+    });
+  });
+
+  // Mobile menu
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  if (mobileBtn) {
+    mobileBtn.addEventListener('click', () => {
+      state.panelOpen = !state.panelOpen;
+      const panel = document.getElementById('side-panel');
+      const overlay = document.getElementById('panel-overlay');
+      if (panel) panel.classList.toggle('open', state.panelOpen);
+      if (overlay) overlay.classList.toggle('show', state.panelOpen);
+    });
+  }
+  // Close panel on overlay tap
+  const overlay = document.getElementById('panel-overlay');
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      state.panelOpen = false;
+      const panel = document.getElementById('side-panel');
+      if (panel) panel.classList.remove('open');
+      overlay.classList.remove('show');
+    });
+  }
+
+  // Table cells
+  document.querySelectorAll('.table-cell').forEach(cell => {
+    cell.addEventListener('click', () => {
+      const num = parseInt(cell.dataset.table, 10);
+      const idx = state.selectedTables.indexOf(num);
+
+      if (idx >= 0) {
+        state.selectedTables.splice(idx, 1);
+      } else {
+        if (state.selectedTables.length >= 2) state.selectedTables.shift();
+        state.selectedTables.push(num);
+      }
+
+      updateSidePanel();
+    });
+  });
+
+  // Start button
+  const startBtn = document.getElementById('btn-start');
+  if (startBtn) {
+    startBtn.addEventListener('click', () => {
+      if (state.selectedTables.length === 2) {
+        state.panelOpen = false;
+        startSession();
+      }
+    });
+  }
+
+  // Answer input
+  const answerInput = document.getElementById('answer-input');
+  if (answerInput) {
+    answerInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') submitAnswer();
+    });
+  }
+
+  // Mobile numpad
+  document.querySelectorAll('.numpad-btn[data-num]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.pendingInput = (state.pendingInput + btn.dataset.num).slice(0, 5);
+      const input = document.getElementById('answer-input');
+      if (input) input.value = state.pendingInput;
+      const mobileAns = document.getElementById('mobile-ans-val');
+      if (mobileAns) mobileAns.textContent = state.pendingInput || '_';
+    });
+  });
+
+  const npDel = document.getElementById('np-del');
+  if (npDel) {
+    npDel.addEventListener('click', () => {
+      state.pendingInput = state.pendingInput.slice(0, -1);
+      const input = document.getElementById('answer-input');
+      if (input) input.value = state.pendingInput;
+      const mobileAns = document.getElementById('mobile-ans-val');
+      if (mobileAns) mobileAns.textContent = state.pendingInput || '_';
+    });
+  }
+
+  const npEnter = document.getElementById('np-enter');
+  if (npEnter) npEnter.addEventListener('click', submitAnswer);
+
+  // Results actions
+  const retryBtn = document.getElementById('btn-retry');
+  if (retryBtn) retryBtn.addEventListener('click', () => {
+    state.page = 'home';
+    state.results = null;
+    updateMainContent();
+    startSession();
+  });
+
+  const homeBtn = document.getElementById('btn-home');
+  if (homeBtn) homeBtn.addEventListener('click', () => {
+    state.page = 'home';
+    state.results = null;
+    updateMainContent();
+    updateNavActive();
+  });
+}
+
+function updateMainContent() {
+  const arena = document.getElementById('main-arena');
+  if (arena) arena.innerHTML = renderMainContent();
+  bindEvents();
+}
+
+function updateNavActive() {
+  document.querySelectorAll('.nav-item').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.page === state.page);
+  });
+}
+
+function updateSidePanel() {
+  const panel = document.getElementById('side-panel');
+  if (!panel) return;
+  panel.outerHTML = renderSidePanel();
+  // Re-bind (outerHTML replaces node)
+  bindEvents();
+}
+
+// =============================================
+// BOOT
+// =============================================
+init();
+
+
+// ===== SLIDE UP ANIMATION =====
+const styleEl = document.createElement('style');
+styleEl.textContent = `@keyframes slideUp {from{transform:translateX(-50%) translateY(20px);opacity:0}to{transform:translateX(-50%) translateY(0);opacity:1}}`;
+document.head.appendChild(styleEl);
+  </script>
+</body>
+</html>

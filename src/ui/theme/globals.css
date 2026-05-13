@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg:          #07120a;
+  --bg2:         #0d1f12;
+  --bg3:         #132b19;
+  --panel:       #0f1e14;
+  --border:      #1a3320;
+  --border-bright: #2a5534;
+  --green-dim:   #1e4a28;
+  --green-mid:   #2d7a3a;
+  --green:       #3dba55;
+  --green-bright:#5de878;
+  --green-glow:  rgba(61,186,85,0.25);
+  --green-pulse: rgba(93,232,120,0.12);
+  --amber:       #f59e0b;
+  --danger:      #ef4444;
+  --danger-dim:  #7f1d1d;
+  --ink:         #e8f5eb;
+  --ink-muted:   #6b9e77;
+  --ink-faint:   #3a5e43;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 2px; }
+
+/* Selection */
+::selection { background: var(--green-glow); color: var(--green-bright); }
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+/* Remove input autofill */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px var(--bg2) inset;
+  -webkit-text-fill-color: var(--ink);
+}
+
+@layer utilities {
+  .font-mono    { font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace; }
+  .font-display { font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; }
+  .font-body    { font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+  .glass {
+    background: rgba(13, 31, 18, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 24px var(--green-glow);
+  }
+
+  .border-glow {
+    border-color: var(--green);
+    box-shadow: 0 0 0 1px var(--green-glow);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px var(--green-glow);
+  }
+}

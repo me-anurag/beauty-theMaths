@@ -54,7 +54,7 @@ function generateMultiplyQuestions(
   if (tables.length === 0) return [];
 
   // Build full cartesian: each table × operands 1..20
-  const operands = Array.from({ length: 20 }, (_, i) => i + 1);
+  const operands = Array.from({ length: 10 }, (_, i) => i + 1);
   const allPairs: Array<{ table: number; operand: number }> = [];
 
   for (const t of tables) {
@@ -114,7 +114,7 @@ function generateMixedQuestions(
   // Helper: pick a random table value (table × rand operand)
   const tableVal = () => {
     const t = tables[Math.floor(Math.random() * tables.length)];
-    const op = Math.floor(Math.random() * 15) + 1; // 1–15
+    const op = Math.floor(Math.random() * 10) + 1; // 1–10
     return t * op;
   };
 
